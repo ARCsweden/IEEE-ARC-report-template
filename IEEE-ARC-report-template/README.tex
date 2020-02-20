@@ -1,0 +1,234 @@
+%  ____  _____    _    ____  __  __ _____  
+% |  _ \| ____|  / \  |  _ \|  \/  | ____| 
+% | |_) |  _|   / _ \ | | | | |\/| |  _|
+% |  _ <| |___ / ___ \| |_| | |  | | |___ 
+% |_| \_\_____/_/   \_\____/|_|  |_|_____|
+%
+% Press recompile to see this guide! ------------------------------------------------
+
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section*{How to use this template for reports}
+   
+    Only change the title in main.tex and uncomment sections when completed
+    Each file/section (abstract, introduction, etc) of the report should be written separately in the folder "section".
+    Each file should be handled as individual cells within this document structure (see below).
+    Advantages of doing this are reduced compiling time, recycle files, debugging, easier teamwork, focus.
+    
+\begin{lstlisting}[style=latex]
+    \documentclass[main.tex]{subfiles}
+    \begin{document}
+    %--Content here---
+    % Always newline after dot"."
+    % This will help you debug. 
+    \end{document}
+\end{lstlisting}
+    
+    When a section is completed and ready to be included in the main document
+    add by using the following command
+\begin{lstlisting}[style=latex]
+    \subfile{section/name_of_file} to main.tex in order as it should be shown.
+\end{lstlisting}
+    Advantages of doing this are to keep the main.tex clutter-free and errors away from others since all sections can be loaded in a separate environment.
+    
+    Declare all packages in \verb|includes/preamble.tex| using the \verb|\usepackage{}| command.
+    
+
+\section*{Structure of the \text{\LaTeX} thesis}
+    The structure of the document is documented in this short section.
+    \begin{itemize}
+        \item \verb|main.tex| is the biddy of the latex document.
+        \item \verb|README.tex| Is this guide.
+        \item \verb|includes| Directory contains authors, keywords and preamble.
+        \begin{itemize}
+                \item \verb|acronyms.tex| Shortening of a word or a phrase.
+                \item \verb|lstdefine.tex| Contains the colour codes for source code highlighting.
+                \item \verb|preamble.tex| Contains what packagers should be included in to the report.
+        \end{itemize}
+    \end{itemize}
+
+    
+\begin{lstlisting}[style=latex]
+    \caption[Short name]{The long description.}
+\end{lstlisting}
+    This must be done in this way so that the name of the image is shown in the
+    \verb|\listoffigures| and \verb|\listoftables| without the long description.
+\section*{Section, Subsection....}
+All Section, Subsection can be formatted as follows:
+\begin{lstlisting}[style=latex]
+    \section[Short name]{Longer name}
+    \subsection[Short name]{Longer name}
+Following this format will make a cleaner \tableofcontents if needed.
+\end{lstlisting}
+\section*{References}
+    Make fast and easy reference using \url{https://truben.no/latex/bibtex/}.
+    
+    Store them in \verb|references.bib|
+    All url links must use \verb|\url{}| in reference.Example:
+\begin{lstlisting}[style=latex]
+    howpublished ="\url{http://www.myFancyLink.com}"
+\end{lstlisting}
+    A good online tool to create valid references could be found at \url{https://truben.no/latex/bibtex/}.
+    Secondly, if you have Firefox then you could add the google scholar button at
+    %\url{https://addons.mozilla.org/en-US/firefox/addon/google-scholar-button/}
+    \url{https://mzl.la/2YN28T7}
+    Then if you mark any text in Firefox and press the button. Google will try to find the text matching any book or report.
+    Within the drop-down menu click the \verb|"| icon for the report you want to have the reference for and you will be asked if you want brief for that report. Just copy the side that opens and paste it into \verb|reference.bib| file.
+    
+    
+\section*{Acronyms}
+    Using the \verb|acronym| package to create your acronyms.
+    
+    \verb|include/acronyms.tex| file using the
+    Then to add a new acronym just write:
+\begin{lstlisting}[style=latex]
+    \acrodef{acronym}[short name]{full name}
+Example: \acrodef{TLA}[TLA]{There Letter Acronym}
+\end{lstlisting}
+    Then if you want to use your newly created acronyms in the text later use the \verb|ac{}| command as in this example.
+\begin{lstlisting}[style=latex]
+    The acronym package lets me write about the \ac{TLA} in a seamless fasion and the \ac{TLA} can also be used as a plural by \aclp{IC} or \acp{IC}.
+    And that is great because \ac{TLA} is great stuff.
+\end{lstlisting}
+    Resulting in:
+    \vspace{3mm}
+    \begin{flushleft}
+    The acronym package lets me write about the There Letter Acronym (TLA) in a seamless fasion and the (TLA) can also be used as a plural by Integrated Circuits or ICs.
+    \end{flushleft}
+    
+\section*{Table help}
+    Create tables at \url{https://tablesgenerator.com/}.
+    Remember to change the \verb|\caption{}| according to rules listed above.
+\section*{Math help}
+    For LaTeX maths related problem peace visit \url{https://www.latex4technics.com/}
+    
+\section*{Figure help}
+Adding a single image to the report is done by doing the following.
+\begin{lstlisting}[style=latex]
+\begin{figure}[H] 
+    \centering
+    \includegraphics
+    [width=\textwidth]{image/Homer.png}
+    \caption[Short name]{Long description of Good image}
+    \label{lab:imglabel}
+\end{figure}
+\end{lstlisting}
+Or perhaps adding multiple images in the same float is desired. Then do follow this pattern. 
+\begin{figure}[H]
+    \centering
+\begin{lstlisting}[style=latex]
+\begin{figure}[H]
+    \centering
+    \subfigure[Some text about logo1]{
+    \label{fig:logo1}
+    \includegraphics[width=.45\columnwidth]{logo}}
+    \qquad
+    \subfigure[Some text about logo2]{
+    \label{fig:logo2}
+    \includegraphics[width=.45\columnwidth]{logo}}
+    \\
+    \subfigure[Some text about logo3]{
+    \label{fig:logo3}
+    \includegraphics[width=.45\columnwidth]{logo}}
+    \qquad
+    \subfigure[Some text about logo4]{
+    \label{fig:logo4}
+    \includegraphics[width=0.45\columnwidth]{logo}}
+    \caption[Short text]{Long text}
+    \label{fig:FourLogos}
+    \end{figure}
+\end{lstlisting}
+%    \caption{Caption}
+%    \label{fig:my_label}
+\end{figure}
+
+\section*{Source Code Listings}
+Adding source code into your master theses is considered to be a bad practice.
+But if the code is considered to be a new solution newer previously bin done before
+there perhaps including the code is necessary.
+\par
+Code listings can be done in three ways.
+Both have advantages and disadvantages not discussed here. 
+The first one is by including the source code from another file.
+\begin{lstlisting}[style=latex]
+    \lstinputlisting[language=Python]{source_filename.py}
+\end{lstlisting}
+Or you could write it in-line. 
+\begin{lstlisting}[style=latex]
+    begin{lstlisting}
+       import antigravity
+       import numpy as np
+       np.eye(4)
+    end{lstlisting}
+\end{lstlisting}
+This will create a text box with the content of the python file with syntax highlighting and more. 
+However, the syntax is only bold and lacks color.
+\begin{lstlisting}[language=Python]
+   import antigravity
+   import numpy as np
+   np.eye(4)
+\end{lstlisting}
+You could also use:
+\begin{lstlisting}[style=latex]
+   \begin{python}
+    def f(x):
+        return x
+    \end{python}
+\end{lstlisting}
+Which will give you some colour for python.
+
+The solution presented in this \verb|README.tex| is to use the styles defined in the file\newline
+\verb|includes/lstdefine.tex|
+So for to create a nice locking python source code listing use the \verb|style| command as an input to the \verb|lstlisting|.
+\begin{lstlisting}[style=latex]
+    \lstinputlisting[style=python]{source_filename.py}
+\end{lstlisting}
+Again inline could be!
+\begin{lstlisting}[style=latex]
+    begin{lstlisting}[style=python]
+       import antigravity
+       import numpy as np
+       np.eye(4)
+    end{lstlisting}
+\end{lstlisting}
+Resulting in much more pleasant view.
+\begin{lstlisting}[style=python]
+   import antigravity
+   import numpy as np
+   np.eye(4)
+\end{lstlisting}
+If any new colours or other languages are required change and add setting in the \verb|includes/lstdefine.tex| file.
+
+
+\section*{Adding PDF pages}
+Adding an existing PDF to the report could be done by
+\begin{lstlisting}[style=latex]
+\includepdf[pages={1}, landscape=true]{includes/gnattchart.pdf}
+\end{lstlisting}
+The first argument given informs the \verb|includepdf{}| macro with side you want to include and if all
+pages all pages ar desierd remove che \verb|pages={...}| argument.
+The \verb|lanscape=true| informs the \verb|includepdf{}| command that the file should be in landscape mode.
+
+
+\vspace{1cm}
+\begin{flushleft}
+This message will not self destruct as it is written in \LaTeX.
+\end{flushleft}
+
+
+
+
+
+
+%========================================
+%  ____                _                 
+% / ___|_ __ ___  __ _| |_ ___  _ __ ___ 
+%| |   | '__/ _ \/ _` | __/ _ \| '__/ __|
+%| |___| | |  __/ (_| | || (_) | |  \__ \
+% \____|_|  \___|\__,_|\__\___/|_|  |___/
+%                                        
+%========================================
+%  Emil Persson - epn17006@student.mdh.se
+%  Magnus Sörensen - msn15018@student.mdh.se
+%========================================
+\end{document}

@@ -1,0 +1,23 @@
+% Example of using a file to remove clutter from document text.
+% Add the following command to another file.
+% \input{image/multiFigExample}
+\begin{figure}[H]
+    \centering
+    \subfigure[Some text1]{
+    \label{fig:logo1}
+    \includegraphics[width=.4\columnwidth]{logo}}
+    \qquad
+    \subfigure[Some text2]{
+    \label{fig:logo2}
+    \includegraphics[width=.4\columnwidth]{logo}}
+    \\
+    \subfigure[Some text3]{
+    \label{fig:logo3}
+    \includegraphics[width=.4\columnwidth]{logo}}
+    \qquad
+    \subfigure[Some text4]{
+    \label{fig:logo4}
+    \includegraphics[width=.4\columnwidth]{logo}}
+    \caption[Short text]{Long text}
+    \label{fig:FourLogos}
+\end{figure}

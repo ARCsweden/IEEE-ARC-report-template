@@ -1,0 +1,159 @@
+
+ % Programming color don't touch without permissions.
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codeblue}{HTML}{0073e6}
+\definecolor{codegray}{rgb}{0.4,0.4,0.4}
+\definecolor{codeblac}{rgb}{0.9,0.9,0.9}
+\definecolor{commentgray}{rgb}{0.7,0.7,0.7}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{stringblue}{HTML}{0073e6}
+\definecolor{stringpurple}{HTML}{ff99ff}
+\definecolor{stringgray}{rgb}{0.6,0.6,0.6}
+\definecolor{backcolour}{rgb}{1,1,1}
+\definecolor{graybackcolour}{rgb}{0.8,0.8,0.8}
+
+\lstdefinestyle{bashStyle}{
+    backgroundcolor=\color{graybackcolour},
+    commentstyle=\color{commentgray},
+    keywordstyle=\color{codeblue},
+    numberstyle=\color{stringblue},
+    stringstyle=\color{codegreen},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\definecolor{commentgreen}{rgb}{0,0.6,0}
+\definecolor{lightgraybackcolour}{rgb}{0.99,0.99,0.99}
+\lstdefinestyle{matlabStyle}{
+    backgroundcolor=\color{lightgraybackcolour},
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{stringblue},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{textStyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\definecolor{bginstructions}{HTML}{e6f7ff}
+
+\lstdefinestyle{instructStyle}{
+    backgroundcolor=\color{bginstructions},
+    numberstyle=\tiny\color{codegray},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\lstdefinestyle{TeXStyle}{
+    backgroundcolor=\color{bginstructions},
+    numberstyle=\tiny\color{codegray},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    morekeywords={begin, subfile, caption, includegraphics, lstinputlisting, chapter,subsection,section},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\lstdefinestyle{pythonStyle}{
+    %backgroundcolor=\color{bginstructions},
+    backgroundcolor=\color{lightgraybackcolour},
+    numberstyle=\tiny\color{codegray},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=4pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+
+
+%\lstset{style=mystyle}
+\lstdefinestyle{bash} {language=bash,style=bashStyle}
+\lstdefinestyle{gcc} {language=c,style=bashStyle}
+\lstdefinestyle{matlab} {language=matlab,style=matlabStyle}
+\lstdefinestyle{text} {style=textStyle, frame=lines}
+\lstdefinestyle{instruct} {style=instructStyle, frame=lines, numbers=none}
+\lstdefinestyle{latex} {language=TeX, style=TeXStyle, frame=lines, numbers=none}
+\lstdefinestyle{python} {language=Python, style=pythonStyle, frame=lines}
+
+
+% use this by writing
+% \lstinputlisting[style=gcc]{main.c}
+% Or for intext code
+%\begin{lstlisting}[gcc]
+%#include <stdio.h>
+%int main()
+%{
+%
+%}
+%\end{lstlisting}
