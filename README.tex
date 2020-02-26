@@ -6,7 +6,9 @@
 %
 % Press recompile to see this guide! ------------------------------------------------
 
-\documentclass[main.tex]{subfiles}
+\documentclass[conference]{IEEEtran}
+\input{include/preamble.tex}
+\input{include/lstdefine.tex}
 \begin{document}
 \section*{How to use this template for reports}
    
@@ -205,7 +207,7 @@ Adding an existing PDF to the report could be done by
 \begin{lstlisting}[style=latex]
 \includepdf[pages={1}, landscape=true]{includes/gnattchart.pdf}
 \end{lstlisting}
-The first argument given informs the \verb|includepdf{}| macro with side you want to include and if all
+The first argument informs the \verb|includepdf{}| macro with side you want to include and if all
 pages all pages ar desierd remove che \verb|pages={...}| argument.
 The \verb|lanscape=true| informs the \verb|includepdf{}| command that the file should be in landscape mode.
 

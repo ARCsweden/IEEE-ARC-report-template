@@ -2,7 +2,7 @@
 
 #### The following template is a "IEEE Bare Demo Template for Conferences" that has been structured and tailored for the engineering students at Mälardalens University.
 
-#### Download or clone the repository, then upload to [Overleaf](https://www.overleaf.com/) by pressing "New project" -> "Upload project" or import from github.
+#### Download or clone the repository, then upload to [Overleaf](https://www.overleaf.com/) by pressing "New project" -> "Upload project" -> "Select zip file".
 
 #### LaTeX instructional courses will be held sporadically(or by request) by [Aros Robotics Club](https://www.arcsweden.com).
 
