@@ -34,7 +34,7 @@
 \end{lstlisting}
     Advantages of doing this are to keep the main.tex clutter-free and errors away from others since all sections can be loaded in a separate environment.
     
-    Declare all packages in \verb|includes/preamble.tex| using the \verb|\usepackage{}| command.
+    Declare all packages in \verb|include/preamble.tex| using the \verb|\usepackage{}| command.
     
 
 \section*{Structure of the \text{\LaTeX} thesis}
@@ -88,7 +88,7 @@ Following this format will make a cleaner \tableofcontents if needed.
     Then to add a new acronym just write:
 \begin{lstlisting}[style=latex]
     \acrodef{acronym}[short name]{full name}
-Example: \acrodef{TLA}[TLA]{There Letter Acronym}
+Example: \acrodef{tla}[TLA]{There Letter Acronym}
 \end{lstlisting}
     Then if you want to use your newly created acronyms in the text later use the \verb|ac{}| command as in this example.
 \begin{lstlisting}[style=latex]
@@ -109,6 +109,7 @@ Example: \acrodef{TLA}[TLA]{There Letter Acronym}
     
 \section*{Figure help}
 Adding a single image to the report is done by doing the following.
+Please note to use the flag "H" as in $begin\{figure\}[H]$, this will position the figure exactly where you placed it in the text (if it fits the page obviously).
 \begin{lstlisting}[style=latex]
 \begin{figure}[H] 
     \centering
