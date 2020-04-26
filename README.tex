@@ -15,8 +15,9 @@
     Only change the title in main.tex and uncomment sections when completed
     Each file/section (abstract, introduction, etc) of the report should be written separately in the folder "section".
     Each file should be handled as individual cells within this document structure (see below).
-    Advantages of doing this are reduced compiling time, recycle files, debugging, easier teamwork, focus.
+    Advantages of doing this are recycle files, debugging, easier teamwork, focus but will increase compiling time slightly.
     
+    If you want to enable standalone cell editing, uncomment the package "subfiles" located in the folder include/preamble.tex
 \begin{lstlisting}[style=latex]
     \documentclass[main.tex]{subfiles}
     \begin{document}
@@ -41,7 +42,7 @@
     \begin{itemize}
         \item \verb|main.tex| is the biddy of the latex document.
         \item \verb|README.tex| Is this guide.
-        \item \verb|includes| Directory contains authors, keywords and preamble.
+        \item \verb|include| Directory contains authors, keywords and preamble.
         \begin{itemize}
                 \item \verb|acronyms.tex| Shortening of a word or a phrase.
                 \item \verb|lstdefine.tex| Contains the colour codes for source code highlighting.
@@ -70,6 +71,8 @@ Following this format will make a cleaner \tableofcontents if needed.
 \begin{lstlisting}[style=latex]
     howpublished ="\url{http://www.myFancyLink.com}"
 \end{lstlisting}
+    \textbf{Note that the URL cannot contain \LaTeX{} symbols such as percent "\%" and this is the most common way for errors to occure that are hard to trace}.
+    Solution: Replace "\%" with "$\backslash$\%.
     A good online tool to create valid references could be found at \url{https://truben.no/latex/bibtex/}.
     Secondly, if you have Firefox then you could add the google scholar button at
     %\url{https://addons.mozilla.org/en-US/firefox/addon/google-scholar-button/}
