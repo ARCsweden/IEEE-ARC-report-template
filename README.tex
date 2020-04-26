@@ -6,7 +6,7 @@
 %
 % Press recompile to see this guide! ------------------------------------------------
 
-\documentclass[conference]{IEEEtran}
+\documentclass[conference, onecolumn]{IEEEtran}
 \input{include/preamble.tex}
 \input{include/lstdefine.tex}
 \begin{document}
@@ -177,12 +177,15 @@ However, the syntax is only bold and lacks color.
 You could also use:
 \begin{lstlisting}[style=latex]
    \begin{python}
-    def f(x):
+    def function(x):
         return x
     \end{python}
 \end{lstlisting}
 Which will give you some colour for python.
-
+   \begin{python}
+    def function(x):
+        return x
+    \end{python}
 The solution presented in this \verb|README.tex| is to use the styles defined in the file\newline
 \verb|includes/lstdefine.tex|
 So for to create a nice locking python source code listing use the \verb|style| command as an input to the \verb|lstlisting|.
@@ -214,18 +217,6 @@ Adding an existing PDF to the report could be done by
 The first argument informs the \verb|includepdf{}| macro with side you want to include and if all
 pages all pages ar desierd remove che \verb|pages={...}| argument.
 The \verb|lanscape=true| informs the \verb|includepdf{}| command that the file should be in landscape mode.
-
-
-
-\vspace{1cm}
-\begin{flushleft}
-This message will not self destruct as it is written in \LaTeX.
-\end{flushleft}
-
-
-
-
-
 
 %========================================
 %  ____                _                 
