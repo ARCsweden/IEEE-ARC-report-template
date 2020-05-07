@@ -1,30 +1,30 @@
 \documentclass[conference]{IEEEtran}
 % Include all packages from file.
-\input{include/preamble.tex}
+\input{preamble}
 % Include acronyms
-\input{include/acronym.tex}
-% Include bibliography file
-\addbibresource{reference.bib}
-% Include footnote, need minimum of two pages to be seen.
-% \input{include/footnote}
+\input{acronym}
 % The report title.
-\title{Aros Robotics Club \\ Room U1-043}
+\title{Aros Robotics Club - Room U1-043}
 % Include authors 
-\input{include/author} 
+\input{author} 
 % Document begins here
 \begin{document}
 % Create the title.
 \maketitle
-% Sections should be included in presented order when completed.
-\input{section/abstract}
-\input{include/keywords}
-\input{section/introduction}
-\input{section/hardware} 
-\input{section/software}
-\input{section/method}
-\input{section/results}
-\input{section/conclusion}
-\input{section/discussion}
-\input{section/acknowledgement}
-\printbibliography
+% Example sections, name them
+% according to specific needs.
+\input{sections/abstract}
+\input{sections/keywords}
+\input{sections/introduction}
+\input{sections/hardware}
+\input{sections/software}
+\input{sections/method}
+\input{sections/results}
+\input{sections/conclusion}
+\input{sections/discussion}
+\input{sections/acknowledgement}
+% Select the IEEEtran style
+\bibliographystyle{IEEEtran}
+% Include bibliography file
+\bibliography{IEEEabrv,references}
 \end{document}
